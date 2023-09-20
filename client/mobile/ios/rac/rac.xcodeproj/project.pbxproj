@@ -23,6 +23,7 @@
 		2600B0902A69DCC7003E8388 /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2600B08F2A69DCC7003E8388 /* UserSettings.swift */; };
 		2600B0922A69F786003E8388 /* PreferenceSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2600B0912A69F786003E8388 /* PreferenceSettings.swift */; };
 		261F66472A6A3A7C00648DE2 /* AppleSignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 261F66462A6A3A7C00648DE2 /* AppleSignInButton.swift */; };
+		261FF5F62AB44BD2006C7668 /* Avatars in Frameworks */ = {isa = PBXBuildFile; productRef = 261FF5F52AB44BD2006C7668 /* Avatars */; };
 		262ACBCB2A71C10700F87797 /* Shimmer in Frameworks */ = {isa = PBXBuildFile; productRef = 262ACBCA2A71C10700F87797 /* Shimmer */; };
 		264530392A8823FD0046DFCA /* CharacterMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264530382A8823FD0046DFCA /* CharacterMessage.swift */; };
 		2645303B2A8824030046DFCA /* UserMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2645303A2A8824030046DFCA /* UserMessage.swift */; };
@@ -91,6 +92,7 @@
 				2600B0852A68F585003E8388 /* FirebaseAuth in Frameworks */,
 				2600B07B2A61EA86003E8388 /* CachedAsyncImage in Frameworks */,
 				2600B0872A68F585003E8388 /* FirebaseAuthCombine-Community in Frameworks */,
+				261FF5F62AB44BD2006C7668 /* Avatars in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +290,7 @@
 				2600B0862A68F585003E8388 /* FirebaseAuthCombine-Community */,
 				2600B08B2A68FC8C003E8388 /* GoogleSignInSwift */,
 				262ACBCA2A71C10700F87797 /* Shimmer */,
+				261FF5F52AB44BD2006C7668 /* Avatars */,
 			);
 			productName = rac;
 			productReference = 26FE4D052A5B6F0D006A1882 /* rac.app */;
@@ -322,6 +325,7 @@
 				2600B0812A68F585003E8388 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				2600B08A2A68FC8C003E8388 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 				262ACBC92A71C10700F87797 /* XCRemoteSwiftPackageReference "SwiftUI-Shimmer" */,
+				261FF5F42AB44BD1006C7668 /* XCRemoteSwiftPackageReference "avatars-swift" */,
 			);
 			productRefGroup = 26FE4D062A5B6F0D006A1882 /* Products */;
 			projectDirPath = "";
@@ -613,6 +617,14 @@
 				minimumVersion = 7.0.0;
 			};
 		};
+		261FF5F42AB44BD1006C7668 /* XCRemoteSwiftPackageReference "avatars-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/avatechgg/avatars-swift";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		262ACBC92A71C10700F87797 /* XCRemoteSwiftPackageReference "SwiftUI-Shimmer" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/markiv/SwiftUI-Shimmer";
@@ -648,6 +660,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2600B08A2A68FC8C003E8388 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
 			productName = GoogleSignInSwift;
+		};
+		261FF5F52AB44BD2006C7668 /* Avatars */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 261FF5F42AB44BD1006C7668 /* XCRemoteSwiftPackageReference "avatars-swift" */;
+			productName = Avatars;
 		};
 		262ACBCA2A71C10700F87797 /* Shimmer */ = {
 			isa = XCSwiftPackageProductDependency;

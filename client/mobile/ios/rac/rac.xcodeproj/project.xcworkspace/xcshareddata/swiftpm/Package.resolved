@@ -19,6 +19,15 @@
       }
     },
     {
+      "identity" : "avatars-swift",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/avatechgg/avatars-swift",
+      "state" : {
+        "branch" : "main",
+        "revision" : "61f406640823adc5ce37da5205bae693fc78980b"
+      }
+    },
+    {
       "identity" : "firebase-ios-sdk",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/firebase/firebase-ios-sdk",

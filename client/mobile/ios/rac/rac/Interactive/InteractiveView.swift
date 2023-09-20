@@ -8,6 +8,7 @@
 import SwiftUI
 import AVFoundation
 import CoreHaptics
+import Avatars
 
 enum InteractiveMode {
     case voice, text
@@ -35,9 +36,21 @@ struct InteractiveView: View {
     @StateObject var audioPlayer = AudioPlayer()
     @State var engine: CHHapticEngine?
 
+    @StateObject var viewModel = AvatarViewModel(
+        text: Message(""),
+        avatarId: "a966ce24-1af4-4aa9-a5ca-83146ba77fe2",
+        x: 0, // Model transition
+        y: 0,
+        scale: 0.5, // Model scale & rotation
+        rotation: 0,
+//        isDevelopment: true, // Debug panel
+        // Mapped by Avatech | Avatar Studio
+        currentEmotion: ""
+    )
+    
     var body: some View {
         VStack(spacing: 0) {
-
+            AvatarView(viewModel)
             switch mode {
             case .text:
                 ChatMessagesView(messages: $messages,
@@ -97,6 +110,7 @@ struct InteractiveView: View {
                 .preferredColorScheme(.dark)
                 .background(Constants.realBlack)
             }
+            
 
             HStack(alignment: .center, spacing: 28) {
                 Button {
@@ -200,9 +214,9 @@ struct InteractiveView: View {
                 }
             }
             webSocket.onDataReceived = { data in
-                if mode == .voice, case .characterSpeaking = voiceState {
-                    audioPlayer.playAudio(data: data)
-                }
+                    let encodedString = data.base64EncodedString()
+                    viewModel.rawBase64Audio = encodedString
+                
             }
             webSocket.onErrorReceived = { _ in
                 if messages.last?.content != Constants.serverError {
